@@ -1,0 +1,204 @@
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/material-icon.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: rgb(243, 243, 243);
+}
+
+nav {
+  background-color: #343a40;
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    max-width: 1140px;
+    width: 100%;
+  }
+}
+
+
+section {
+  padding: 100px 0;
+}
+
+.pb-4 {
+  padding-bottom: 1.5rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.p-5 {
+  padding: 48px;
+}
+
+.mb-5 {
+  margin-bottom: 48px !important;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.col {
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+a {
+  text-decoration: none !important;
+  color: rgb(0, 21, 46);
+  transition: all .2s ease;
+}
+
+.leagues .item {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#content .item  {
+  background-color: white;
+  padding: 30px;
+  position: relative
+}
+
+#content .item img {
+  height: 150px;
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+#content .item .position {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  background-color: rgb(0, 68, 255);
+  padding: 10px;
+  color: white;
+}
+
+#content .item .detail {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px
+}
+
+#content .item .detail span {
+  text-align: center;
+  display: block;
+  padding: 10px 15px;
+  margin: 0px 5px;
+  background-color: white;
+  transition: all .2s ease;
+  border: 1px solid rgb(139, 139, 139);
+}
+
+#content .item .detail span:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+#content .item .detail-btn {
+  display: block;
+  padding: 10px;
+  background-color: rgb(255, 232, 100) !important;
+}
+
+#content .item .delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 20px;
+  width: 2.5em; height: 2.5em;
+  background: rgb(255, 0, 85);
+}
+
+#content .item .save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgb(255, 0, 85);
+  font-size: 20px;
+  width: 2.5em; height: 2.5em;
+  border: 1px solid rgb(255, 0, 85);
+}
+
+#content .item .save.active {
+  background: rgb(255, 0, 85);
+  color: white;
+}
+
+#content .title img {
+  width: 100px;
+}
+
+#content .player img {
+  display: block;
+  margin: auto;
+  height: 100px;
+}
+
+#save {
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  font-size: 20px;
+  width: 3rem; height: 3rem;
+  background: rgb(255, 0, 85);
+}
+#save img {
+  width: 40%;
+}

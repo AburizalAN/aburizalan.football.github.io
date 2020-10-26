@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Submission PWA 2</title>
+    <meta name="description" content="submission PWA 2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/materialize.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a class="brand-logo" href="/index.html">FootBall</a>
+          <a href="./index.html" class="sidenav-trigger" data-target="nav-mobile">
+            <i class="material-icons">arrow_back</i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <div class="container">
+        <div id="content" class="row">
+
+        </div>
+      </div>
+    </section>
+
+    <a id="save">
+      <img src="./img/save.svg" alt="save">
+    </a>
+
+    <script src="./js/materialize.min.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/idb.js"></script>
+    <script src="./js/db.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(() => {
+          console.log("Pendaftaran ServiceWorker berhasil");
+          })
+          .catch(() => {
+          console.log("Pendaftaran ServiceWorker gagal");
+          });
+        });
+      } else {
+        console.log("ServiceWorker belum didukung browser ini.");
+      }
+
+      // REQUEST API UNTUK PERTAMA KALI
+      document.addEventListener("DOMContentLoaded", function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var isFromSaved = urlParams.get("saved");
+
+        var btnSave = document.getElementById("save");
+
+        if (isFromSaved) {
+          // Hide fab jika dimuat dari indexed db
+          btnSave.style.display = 'none';
+          
+          // ambil artikel lalu tampilkan
+          getSavedTeamById();
+        } else {
+          var item = getTeamById();
+          // event click save
+          var save = document.getElementById("save");
+          save.onclick = function() {
+            alert('team sudah disimpan')
+            console.log('team disimpan');
+            item.then(function (team) {
+                saveForLater(team);
+            });
+          }
+        }
+        
+      });
+    </script>
+  </body>
+</html>
